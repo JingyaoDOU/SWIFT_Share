@@ -1,3 +1,5 @@
+In order to run SWIFT, your directory should contain: All EoS table files, initial condition hdf5 file, parameter file, swift/swift_mpi executable.
+
 Parameter file and IC file.
 
 EOS:           ANEOS_forsterite_S19
