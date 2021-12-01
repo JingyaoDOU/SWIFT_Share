@@ -21,5 +21,5 @@ echo "cpu per task: " $SLURM_CPUS_PER_TASK
 echo "Number of threads per node: " $SLURM_JOB_CPUS_PER_NODE
 echo "mpi ranks:" $SLURM_STEP_NUM_TASKS
 
-time mpirun -np 4 ./swift_mpi_parmetis_intel2020 -a -s -G --threads=14 parameters_impact.yml 2>&1 | tee -a ./output_${SLURM_JOB_NAME}.log
+time mpirun -np 4 ./swift_mpi_parmetis_intel2020 -a -s -G -t 14 parameters_impact.yml 2>&1 | tee -a ./output_${SLURM_JOB_NAME}.log
 
