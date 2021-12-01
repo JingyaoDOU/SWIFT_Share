@@ -16,3 +16,10 @@ IC file:  snapshot_swift_impact_05715_0468_5e4_9d7_055_100box.hdf5
           impact velocity    : 9.7 km/s
           impact paraneter   : 0.55
           boxsize            : 100 R_earth
+          
+SLURM scrpts: 
+    single_node_script.sh 
+    multi_node_script.sh
+        
+    I tend to submit script directly in the scractch space, so the scripts don't contain any command 
+    that should be used if submmited from the home directory.
