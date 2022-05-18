@@ -1,0 +1,178 @@
+---
+
+# SWIFT used parameter file
+# Code version: 0.9.0
+# git revision: v0.9.0-685-g096059af
+# git branch: master
+# git date: 2021-10-21 15:43:15 +0000
+
+InternalUnitSystem:
+  UnitMass_in_cgs: 5.9724e27
+  UnitLength_in_cgs: 6.371e8
+  UnitVelocity_in_cgs: 6.371e8
+  UnitCurrent_in_cgs: 1.0
+  UnitTemp_in_cgs: 1.0
+
+InitialConditions:
+  file_name: ./impact_05715_0468_65e5_9d7_055.hdf5
+  periodic: 0
+  replicate: 1
+  cleanup_smoothing_lengths: 0
+  cleanup_h_factors: 0
+  cleanup_velocity_factors: 0
+  generate_gas_in_ics: 0
+  remap_ids: 0
+  smoothing_length_scaling: 1
+  stars_smoothing_length: -1
+  black_holes_smoothing_length: -1
+  shift:  [0, 0, 0]
+
+TimeIntegration:
+  time_begin: 0
+  time_end: 72000
+  dt_min: 0.0001
+  dt_max: 1000
+  max_dt_RMS_factor: 0.25
+  dt_RMS_use_gas_only: 0
+
+Snapshots:
+  basename: snapshot
+  time_first: 0
+  delta_time: 100
+  subdir: ./output
+  select_output_on: 0
+  scale_factor_first: 0.1
+  subsample:  [0, 0, 0, 0, 0, 0, 0]
+  subsample_fraction:  [0, 0, 0, 0, 0, 0, 0]
+  run_on_dump: 0
+  compression: 0
+  distributed: 0
+  lustre_OST_count: 0
+  invoke_stf: 0
+  invoke_fof: 0
+  use_delta_from_edge: 0
+  UnitMass_in_cgs: 5.9724e+27
+  UnitLength_in_cgs: 6.371e+08
+  UnitVelocity_in_cgs: 6.371e+08
+  UnitCurrent_in_cgs: 1
+  UnitTemp_in_cgs: 1
+  output_list_on: 0
+
+Statistics:
+  time_first: 0
+  delta_time: 1000
+  scale_factor_first: 0.1
+  energy_file_name: statistics
+  timestep_file_name: timesteps
+  output_list_on: 0
+
+Restarts:
+  enable: 1
+  save: 1
+  onexit: 1
+  subdir: ./restart
+  basename: Rimpact
+  delta_hours: 0.5
+  stop_steps: 100
+  max_run_time: 3.40282e+38
+  resubmit_on_exit: 0
+  lustre_OST_count: 0
+
+SPH:
+  resolution_eta: 1.2348
+  CFL_condition: 0.2
+  h_max: 1.2
+  viscosity_alpha: 1.5
+  h_tolerance: 0.0001
+  h_min_ratio: 0
+  max_ghost_iterations: 30
+  use_mass_weighted_num_ngb: 0
+  max_volume_change: 1.4
+  initial_temperature: 0
+  minimal_temperature: 0
+  H_ionization_temperature: 10000
+  H_mass_fraction: 0.752
+  particle_splitting: 0
+
+Gravity:
+  eta: 0.025
+  MAC: adaptive
+  epsilon_fmm: 0.001
+  theta_cr: 0.5
+  max_physical_baryon_softening: 0.05
+  use_tree_below_softening: 0
+  rebuild_frequency: 0.01
+  allow_truncation_in_MAC: 0
+
+DomainDecomposition:
+  trigger: 0.1
+  initial_type: grid
+  initial_grid:  [2, 2, 2]
+  repartition_type: none
+  minfrac: 0.95
+  usemetis: 0
+  adaptive: 1
+  itr: 100
+  use_fixed_costs: 0
+  synchronous: 0
+
+Scheduler:
+  max_top_level_cells: 16
+  cell_split_size: 400
+  tasks_per_cell: 1.0
+  cell_max_size: 8000000
+  cell_sub_size_pair_hydro: 256000000
+  cell_sub_size_self_hydro: 32000
+  cell_sub_size_pair_stars: 256000000
+  cell_sub_size_self_stars: 32000
+  cell_sub_size_pair_grav: 256000000
+  cell_sub_size_self_grav: 32000
+  cell_subdepth_diff_grav: 4
+  cell_extra_parts: 0
+  cell_extra_sparts: 100
+  cell_extra_gparts: 0
+  cell_extra_bparts: 0
+  cell_extra_sinks: 0
+  engine_max_parts_per_ghost: 1000
+  engine_max_sparts_per_ghost: 1000
+  engine_max_parts_per_cooling: 10000
+  nr_queues: 12
+  dependency_graph_frequency: 0
+  task_level_output_frequency: 0
+  links_per_tasks: 25
+  mpi_message_limit: 4
+
+EoS:
+  planetary_use_ANEOS_forsterite: 1
+  planetary_use_ANEOS_iron: 1
+  planetary_ANEOS_forsterite_table_file: ./ANEOS_forsterite_S19.txt
+  planetary_ANEOS_iron_table_file: ./ANEOS_iron_S20.txt
+  planetary_use_idg_def: 0
+  planetary_use_Til_iron: 0
+  planetary_use_Til_granite: 0
+  planetary_use_Til_water: 0
+  planetary_use_Til_basalt: 0
+  planetary_use_HM80_HHe: 0
+  planetary_use_HM80_ice: 0
+  planetary_use_HM80_rock: 0
+  planetary_use_SESAME_iron: 0
+  planetary_use_SESAME_basalt: 0
+  planetary_use_SESAME_water: 0
+  planetary_use_SS08_water: 0
+  planetary_use_ANEOS_Fe85Si15: 0
+
+PhysicalConstants:
+  G: 1.54146e-06
+
+FOF:
+  dump_catalogue_when_seeding: 0
+
+MetaData:
+  run_name: Untitled SWIFT simulation
+
+StructureFinding:
+  output_list_on: 0
+
+LineOfSight:
+  output_list_on: 0
+...
