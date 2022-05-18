@@ -9,6 +9,7 @@
 #SBATCH --error=err.txt
 #SBATCH --time=3-00:00:00
 
+# Add below command if you are submitting from login node
 #SCRATCH=/mnt/storage/scratch/$USER/bench1node/$SLURM_JOB_NAME
 #[ -d SCRATCH ] || mkdir -p $SCRATCH
 #cd ${SCRATCH}
